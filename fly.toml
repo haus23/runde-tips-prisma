@@ -20,10 +20,10 @@ primary_region = "waw"
   [checks.status]
     port = 3000
     type = "http"
-    interval = "10s"
+    interval = "30s"
     timeout = "2s"
     grace_period = "5s"
     method = "GET"
-    path = "/healthcheck"
+    path = "/resources/healthcheck"
     protocol = "http"
     tls_skip_verify = false
