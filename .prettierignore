@@ -6,4 +6,6 @@ public/build/
 
 .env
 
+prisma/migrations/
+
 package-lock.json

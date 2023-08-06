@@ -1,6 +1,14 @@
-node_modules
+# NPM deps
+node_modules/
 
-/.cache
-/build
-/public/build
+# Remix
+.cache/
+build/
+public/build/
+
+# Sensible data
 .env
+
+# SQLite
+prisma/data.db
+prisma/data.db-journal

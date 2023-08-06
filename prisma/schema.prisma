@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Ruleset {
+  id                 String   @id @default(uuid())
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  name               String
+  slug               String
+  description        String
+  tipRule            String
+  matchRule          String
+  roundRule          String
+  withExtraQuestions Boolean
+  championships      Championship[]
+}
+
+model Championship {
+  id        String   @id
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  rulesId   String
+  name      String
+  nr        Int
+  published Boolean
+  completed Boolean
+  rules     Ruleset  @relation(fields: [rulesId], references: [id])
+}
